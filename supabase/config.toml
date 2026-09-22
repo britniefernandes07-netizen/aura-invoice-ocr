@@ -1,0 +1,2 @@
+[functions.parse-invoice]
+verify_jwt = false
