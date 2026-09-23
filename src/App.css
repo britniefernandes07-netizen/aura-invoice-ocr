@@ -471,6 +471,7 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
+  table-layout: fixed;
 }
 
 .items-table th {
@@ -495,12 +496,18 @@
   border-bottom: none;
 }
 
+/* Widen the ITEM column (first column) so full product names are visible */
+.items-table th:first-child,
+.items-table td:first-child {
+  width: 32%;
+}
+
 .row-flagged {
   background: var(--warning-light);
 }
 
 .col-narrow {
-  width: 90px;
+  width: 70px;
 }
 
 .col-icon {
@@ -519,6 +526,8 @@
   background: #ffffff;
   color: var(--text);
   transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .cell::placeholder {
@@ -928,5 +937,10 @@
   .actions .btn {
     width: 100%;
     justify-content: center;
+  }
+  .items-table th:first-child,
+  .items-table td:first-child {
+    width: auto;
+    min-width: 140px;
   }
 }
